@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     private let mainStackView = UIStackView()
     private let temperatureView = TemperatureView()
     private let dayView = DayView()
+    private let tenDaysView = TenDaysView()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSkyView()
@@ -43,13 +44,13 @@ class ViewController: UIViewController {
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
         mainStackView.addArrangedSubview(temperatureView)
         mainStackView.addArrangedSubview(dayView)
+        mainStackView.addArrangedSubview(tenDaysView)
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
             mainStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: mainStackView.trailingAnchor, multiplier: 1),
         ])
     }
-    
 }
 
 #Preview {

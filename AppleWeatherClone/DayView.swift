@@ -63,5 +63,5 @@ final class DayView: UIView {
 }
 
 #Preview {
-    ViewController()
+    DayView()
 }
