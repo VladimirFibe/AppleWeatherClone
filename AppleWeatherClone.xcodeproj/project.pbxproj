@@ -30,6 +30,9 @@
 		AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		AE48C3CE2C0AB2CF004DC31D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		AE48C3D02C0AB942004DC31D /* HourColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourColumnView.swift; sourceTree = "<group>"; };
+		AE9267A62C0ADF5D00147A21 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AE9267A72C0ADFEB00147A21 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Screenshot.png; path = ../../Desktop/Screenshot.png; sourceTree = "<group>"; };
+		AE9267A92C0AE00800147A21 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,9 @@
 		AE48C3AC2C0AA621004DC31D = {
 			isa = PBXGroup;
 			children = (
+				AE9267A82C0AE00000147A21 /* img */,
+				AE9267A62C0ADF5D00147A21 /* README.md */,
+				AE9267A72C0ADFEB00147A21 /* Screenshot.png */,
 				AE48C3B72C0AA621004DC31D /* AppleWeatherClone */,
 				AE48C3B62C0AA621004DC31D /* Products */,
 			);
@@ -74,6 +80,14 @@
 				AE48C3C62C0AA622004DC31D /* Info.plist */,
 			);
 			path = AppleWeatherClone;
+			sourceTree = "<group>";
+		};
+		AE9267A82C0AE00000147A21 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				AE9267A92C0AE00800147A21 /* Screenshot.png */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
