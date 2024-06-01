@@ -3,15 +3,18 @@ import UIKit
 class ViewController: UIViewController {
     private let mainStackView = UIStackView()
     private let temperatureView = TemperatureView()
+    private let dayView = DayView()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMainStackView()
-        setupTemperatureView()
     }
     private func setupMainStackView() {
         view.addSubview(mainStackView)
         mainStackView.axis = .vertical
+        mainStackView.spacing = 44
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
+        mainStackView.addArrangedSubview(temperatureView)
+        mainStackView.addArrangedSubview(dayView)
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 1),
             mainStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
@@ -19,9 +22,6 @@ class ViewController: UIViewController {
         ])
     }
     
-    private func setupTemperatureView() {
-        mainStackView.addArrangedSubview(temperatureView)
-    }
 }
 
 #Preview {

@@ -14,6 +14,8 @@
 		AE48C3C22C0AA622004DC31D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE48C3C12C0AA622004DC31D /* Assets.xcassets */; };
 		AE48C3C52C0AA622004DC31D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AE48C3C42C0AA622004DC31D /* Base */; };
 		AE48C3CD2C0AA6EC004DC31D /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */; };
+		AE48C3CF2C0AB2CF004DC31D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3CE2C0AB2CF004DC31D /* DayView.swift */; };
+		AE48C3D12C0AB942004DC31D /* HourColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3D02C0AB942004DC31D /* HourColumnView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AE48C3C42C0AA622004DC31D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE48C3C62C0AA622004DC31D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		AE48C3CE2C0AB2CF004DC31D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		AE48C3D02C0AB942004DC31D /* HourColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourColumnView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				AE48C3BA2C0AA621004DC31D /* SceneDelegate.swift */,
 				AE48C3BC2C0AA621004DC31D /* ViewController.swift */,
 				AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */,
+				AE48C3CE2C0AB2CF004DC31D /* DayView.swift */,
+				AE48C3D02C0AB942004DC31D /* HourColumnView.swift */,
 				AE48C3BE2C0AA621004DC31D /* Main.storyboard */,
 				AE48C3C12C0AA622004DC31D /* Assets.xcassets */,
 				AE48C3C32C0AA622004DC31D /* LaunchScreen.storyboard */,
@@ -142,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE48C3BD2C0AA621004DC31D /* ViewController.swift in Sources */,
+				AE48C3CF2C0AB2CF004DC31D /* DayView.swift in Sources */,
+				AE48C3D12C0AB942004DC31D /* HourColumnView.swift in Sources */,
 				AE48C3CD2C0AA6EC004DC31D /* TemperatureView.swift in Sources */,
 				AE48C3B92C0AA621004DC31D /* AppDelegate.swift in Sources */,
 				AE48C3BB2C0AA621004DC31D /* SceneDelegate.swift in Sources */,
@@ -303,6 +311,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,6 +339,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
