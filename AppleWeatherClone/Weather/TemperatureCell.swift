@@ -1,4 +1,5 @@
 import UIKit
+import WeatherKit
 
 final class TemperatureCell: UICollectionViewCell {
     static let identifier = "TemperatureCell"
@@ -19,6 +20,11 @@ final class TemperatureCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with weather: CurrentWeatherViewModel) {
+        temperatureLabel.text = weather.temperature
+        
     }
     
     private func setupStackView() {

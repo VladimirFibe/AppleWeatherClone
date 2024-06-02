@@ -48,15 +48,13 @@ final class HourCell: UICollectionViewCell {
         temperatureLabel.font = .systemFont(ofSize: 22, weight: .medium)
     }
     
-    func configure(with time: String) {
-        timeLabel.text = time
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-#Preview {
-    HourCell()
+    
+    func configure(with weather: HourlyWeatherViewModel) {
+        temperatureLabel.text = weather.temperature
+        imageView.image = UIImage(systemName: weather.iconName)
+        timeLabel.text = weather.hour
+    }
 }

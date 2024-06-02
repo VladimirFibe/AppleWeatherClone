@@ -5,7 +5,7 @@ final class DayCell: UICollectionViewCell {
     private let stackView = UIStackView()
     private let timeLabel = UILabel()
     private let imageView = UIImageView()
-    private let temperatureLabel = UILabel()
+    private let lowLabel = UILabel()
     private let highLabel = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,9 +43,9 @@ final class DayCell: UICollectionViewCell {
     }
     
     private func setupTemperatureLabel() {
-        stackView.addArrangedSubview(temperatureLabel)
-        temperatureLabel.text = "21°"
-        temperatureLabel.font = .systemFont(ofSize: 22, weight: .medium)
+        stackView.addArrangedSubview(lowLabel)
+        lowLabel.text = "21°"
+        lowLabel.font = .systemFont(ofSize: 22, weight: .medium)
     }
     
     private func setupHighLabel() {
@@ -62,8 +62,11 @@ final class DayCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-#Preview {
-    WeatherViewController()
+    
+    func configure(with weather: DailyWeatherViewModel) {
+        lowLabel.text = weather.lowTemperature
+        highLabel.text = weather.highTemperature
+        imageView.image = UIImage(systemName: weather.iconName)
+        timeLabel.text = weather.day
+    }
 }
