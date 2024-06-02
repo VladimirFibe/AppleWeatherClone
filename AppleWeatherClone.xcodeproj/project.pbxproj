@@ -15,6 +15,12 @@
 		AE48C3CD2C0AA6EC004DC31D /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */; };
 		AE48C3CF2C0AB2CF004DC31D /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3CE2C0AB2CF004DC31D /* DayView.swift */; };
 		AE48C3D12C0AB942004DC31D /* HourColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE48C3D02C0AB942004DC31D /* HourColumnView.swift */; };
+		AE8E2DAA2C0C1F4800435278 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DA92C0C1F4800435278 /* Store.swift */; };
+		AE8E2DAC2C0C1F6200435278 /* WeatherStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DAB2C0C1F6200435278 /* WeatherStore.swift */; };
+		AE8E2DAE2C0C396F00435278 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DAD2C0C396F00435278 /* WeatherViewModel.swift */; };
+		AE8E2DB22C0C39E800435278 /* CurrentWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DB12C0C39E800435278 /* CurrentWeatherViewModel.swift */; };
+		AE8E2DB42C0C3A9800435278 /* HourlyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DB32C0C3A9800435278 /* HourlyWeatherViewModel.swift */; };
+		AE8E2DB62C0C3AA400435278 /* DailyWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8E2DB52C0C3AA400435278 /* DailyWeatherViewModel.swift */; };
 		AE9267AB2C0B0EA700147A21 /* TenDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9267AA2C0B0EA700147A21 /* TenDaysView.swift */; };
 		AE9267AD2C0B367600147A21 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9267AC2C0B367600147A21 /* WeatherViewController.swift */; };
 		AE9267B02C0B39D400147A21 /* TemperatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9267AF2C0B39D400147A21 /* TemperatureCell.swift */; };
@@ -38,6 +44,12 @@
 		AE48C3CC2C0AA6EC004DC31D /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		AE48C3CE2C0AB2CF004DC31D /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		AE48C3D02C0AB942004DC31D /* HourColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourColumnView.swift; sourceTree = "<group>"; };
+		AE8E2DA92C0C1F4800435278 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		AE8E2DAB2C0C1F6200435278 /* WeatherStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStore.swift; sourceTree = "<group>"; };
+		AE8E2DAD2C0C396F00435278 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		AE8E2DB12C0C39E800435278 /* CurrentWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewModel.swift; sourceTree = "<group>"; };
+		AE8E2DB32C0C3A9800435278 /* HourlyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewModel.swift; sourceTree = "<group>"; };
+		AE8E2DB52C0C3AA400435278 /* DailyWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherViewModel.swift; sourceTree = "<group>"; };
 		AE9267A62C0ADF5D00147A21 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AE9267A92C0AE00800147A21 /* Screenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot.png; sourceTree = "<group>"; };
 		AE9267AA2C0B0EA700147A21 /* TenDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenDaysView.swift; sourceTree = "<group>"; };
@@ -91,6 +103,7 @@
 				AE9267AE2C0B39BA00147A21 /* Weather */,
 				AE9D40B52C0BFF18007069F3 /* Settings */,
 				AE9D40B42C0BFEF7007069F3 /* View */,
+				AE8E2DA92C0C1F4800435278 /* Store.swift */,
 			);
 			path = AppleWeatherClone;
 			sourceTree = "<group>";
@@ -107,9 +120,14 @@
 			isa = PBXGroup;
 			children = (
 				AE9267AC2C0B367600147A21 /* WeatherViewController.swift */,
+				AE8E2DAB2C0C1F6200435278 /* WeatherStore.swift */,
 				AE9267AF2C0B39D400147A21 /* TemperatureCell.swift */,
 				AE9267B12C0B3E4D00147A21 /* HourCell.swift */,
 				AE9267B32C0B40F600147A21 /* DayCell.swift */,
+				AE8E2DAD2C0C396F00435278 /* WeatherViewModel.swift */,
+				AE8E2DB12C0C39E800435278 /* CurrentWeatherViewModel.swift */,
+				AE8E2DB32C0C3A9800435278 /* HourlyWeatherViewModel.swift */,
+				AE8E2DB52C0C3AA400435278 /* DailyWeatherViewModel.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -235,19 +253,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE8E2DAC2C0C1F6200435278 /* WeatherStore.swift in Sources */,
 				AE9D40AE2C0BF999007069F3 /* IAPManager.swift in Sources */,
 				AE9D40B32C0BFB7F007069F3 /* TabBarController.swift in Sources */,
 				AE48C3BD2C0AA621004DC31D /* ViewController.swift in Sources */,
 				AE48C3CF2C0AB2CF004DC31D /* DayView.swift in Sources */,
+				AE8E2DB62C0C3AA400435278 /* DailyWeatherViewModel.swift in Sources */,
 				AE48C3D12C0AB942004DC31D /* HourColumnView.swift in Sources */,
 				AE48C3CD2C0AA6EC004DC31D /* TemperatureView.swift in Sources */,
+				AE8E2DB22C0C39E800435278 /* CurrentWeatherViewModel.swift in Sources */,
+				AE8E2DB42C0C3A9800435278 /* HourlyWeatherViewModel.swift in Sources */,
 				AE9D40AC2C0BF93C007069F3 /* WeatherManager.swift in Sources */,
 				AE9267AB2C0B0EA700147A21 /* TenDaysView.swift in Sources */,
 				AE9267B22C0B3E4D00147A21 /* HourCell.swift in Sources */,
 				AE9D40B12C0BFB0B007069F3 /* SettingsViewController.swift in Sources */,
+				AE8E2DAA2C0C1F4800435278 /* Store.swift in Sources */,
 				AE9267B02C0B39D400147A21 /* TemperatureCell.swift in Sources */,
 				AE9267AD2C0B367600147A21 /* WeatherViewController.swift in Sources */,
 				AE9D40A92C0BF8D2007069F3 /* LocationManager.swift in Sources */,
+				AE8E2DAE2C0C396F00435278 /* WeatherViewModel.swift in Sources */,
 				AE48C3B92C0AA621004DC31D /* AppDelegate.swift in Sources */,
 				AE48C3BB2C0AA621004DC31D /* SceneDelegate.swift in Sources */,
 				AE9267B42C0B40F600147A21 /* DayCell.swift in Sources */,
@@ -398,6 +422,7 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleWeatherClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to see your local weather data.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -428,6 +453,7 @@
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppleWeatherClone/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow location access to see your local weather data.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

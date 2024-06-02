@@ -1,42 +1,74 @@
 import UIKit
+import CoreLocation
+import WeatherKit
 
 final class WeatherViewController: UIViewController {
+    private var viewModel: [WeatherViewModel] = []
+    private let store = WeatherStore()
+    private var bag = Bag()
     private var collectionView: UICollectionView!
-    private var temperatureCell = TemperatureCell()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupObservers()
+        LocationManager.shared.getCurrentLocation { location in
+            self.store.sendAction(.fetch(location))
+        }
+    }
+    
+    private func setupObservers() {
+        store
+            .events
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] event in
+                guard let self else { return }
+                switch event {
+                case .updateUI(let weather): self.updateUI(with: weather)
+                }
+            }.store(in: &bag)
+    }
+    
+    private func updateUI(with weather: Weather) {
+        viewModel = [
+            .current(.init(model: weather.currentWeather)),
+            .hourly(weather.hourlyForecast.forecast.compactMap { .init(model: $0)}),
+            .daily(weather.dailyForecast.forecast.compactMap { .init(model: $0)})
+        ]
+        collectionView.reloadData()
     }
 }
 
 extension WeatherViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 1: return 24
-        case 2: return 10
-        default: return 1
+        switch viewModel[section] {
+        case .current: return 1
+        case .hourly(let viewModels): return viewModels.count
+        case .daily(let viewModels): return viewModels.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 1: 
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourCell.identifier, for: indexPath) as? HourCell
+        switch viewModel[indexPath.section] {
+        case .current(let viewModel):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.identifier, for: indexPath) as? TemperatureCell
             else { fatalError() }
+            cell.configure(with: viewModel)
             return cell
-        case 2:
+        case .daily(let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayCell.identifier, for: indexPath) as? DayCell
             else { fatalError() }
+            cell.configure(with: viewModels[indexPath.item])
             return cell
-        default:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TemperatureCell.identifier, for: indexPath) as? TemperatureCell else { fatalError() }
+        case .hourly(let viewModels):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HourCell.identifier, for: indexPath) as? HourCell else { fatalError() }
+            cell.configure(with: viewModels[indexPath.item])
             return cell
         }
         
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3
+        viewModel.count
     }
     
     private func setupCollectionView() {
@@ -87,7 +119,7 @@ extension WeatherViewController: UICollectionViewDataSource {
         return layoutSection
     }
 }
-
-#Preview {
-    WeatherViewController()
-}
+//
+//#Preview {
+//    WeatherViewController()
+//}
