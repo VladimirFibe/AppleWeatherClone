@@ -2,20 +2,28 @@ import Foundation
 import WeatherKit
 
 struct CurrentWeatherViewModel {
-    private let model: CurrentWeather
-    init(model: CurrentWeather) {
+    private let model: Weather
+    init(model: Weather) {
         self.model = model
     }
     
     public var condition: String {
-        model.condition.description
+        model.currentWeather.condition.description
     }
     
     public var temperature: String {
-        "\(Int(model.temperature.converted(to: .celsius).value)) °C"
+        "\(Int(model.currentWeather.temperature.converted(to: .celsius).value))°"
     }
     
     public var iconName: String {
-        model.symbolName
+        model.currentWeather.symbolName
+    }
+    
+    public var city: String {
+        "Almaty"
+    }
+    
+    public var dailyHighLow: String {
+        "H:\(Int(model.dailyForecast.forecast[0].highTemperature.converted(to: .celsius).value))°  L:\(Int(model.dailyForecast.forecast[0].lowTemperature.converted(to: .celsius).value))°"
     }
 }

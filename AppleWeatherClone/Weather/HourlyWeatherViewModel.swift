@@ -16,7 +16,20 @@ struct HourlyWeatherViewModel {
     }
     
     public var hour: String {
-        let hour = Calendar.current.component(.hour, from: model.date)
-        return "\(hour):00"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "ha"
+        let calendar = Calendar.current
+        let inputDateComponents = calendar.dateComponents([.day, .hour], from: model.date)
+        let currentDateComponents = calendar.dateComponents([.day, .hour], from: Date())
+        return inputDateComponents == currentDateComponents ? "Now" : dateFormatter.string(from: model.date)
+    }
+    
+    func hourFormatter(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "ha"
+        let calendar = Calendar.current
+        let inputDateComponents = calendar.dateComponents([.day, .hour], from: date)
+        let currentDateComponents = calendar.dateComponents([.day, .hour], from: Date())
+        return inputDateComponents == currentDateComponents ? "Now" : dateFormatter.string(from: date)
     }
 }

@@ -31,30 +31,27 @@ final class HourCell: UICollectionViewCell {
     
     private func setupTimeLabel() {
         stackView.addArrangedSubview(timeLabel)
-        timeLabel.text = "Now"
         timeLabel.font = .systemFont(ofSize: 17, weight: .medium)
     }
     
     private func setupImageView() {
         stackView.addArrangedSubview(imageView)
-        imageView.image = UIImage(systemName: "cloud.moon.fill")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .label
     }
     
     private func setupTemperatureLabel() {
         stackView.addArrangedSubview(temperatureLabel)
-        temperatureLabel.text = "21°"
         temperatureLabel.font = .systemFont(ofSize: 22, weight: .medium)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     func configure(with weather: HourlyWeatherViewModel) {
         temperatureLabel.text = weather.temperature
-        imageView.image = UIImage(systemName: weather.iconName)
+        imageView.image = UIImage(systemName: "\(weather.iconName).fill",
+                                  withConfiguration: UIImage.SymbolConfiguration.preferringMulticolor())
         timeLabel.text = weather.hour
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

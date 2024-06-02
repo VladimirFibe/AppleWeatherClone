@@ -7,6 +7,7 @@ final class DayCell: UICollectionViewCell {
     private let imageView = UIImageView()
     private let lowLabel = UILabel()
     private let highLabel = UILabel()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupStackView()
@@ -25,38 +26,34 @@ final class DayCell: UICollectionViewCell {
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            timeLabel.widthAnchor.constraint(equalToConstant: 60),
+            imageView.widthAnchor.constraint(equalToConstant: 30),
+            lowLabel.widthAnchor.constraint(equalToConstant: 40),
+            highLabel.widthAnchor.constraint(equalToConstant: 40)
         ])
     }
     
     private func setupTimeLabel() {
         stackView.addArrangedSubview(timeLabel)
-        timeLabel.text = "Today"
         timeLabel.font = .systemFont(ofSize: 17, weight: .medium)
     }
     
     private func setupImageView() {
         stackView.addArrangedSubview(imageView)
-        imageView.image = UIImage(systemName: "cloud.moon.fill")
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .label
     }
     
     private func setupTemperatureLabel() {
         stackView.addArrangedSubview(lowLabel)
-        lowLabel.text = "21°"
         lowLabel.font = .systemFont(ofSize: 22, weight: .medium)
     }
     
     private func setupHighLabel() {
         stackView.addArrangedSubview(UIView())
         stackView.addArrangedSubview(highLabel)
-        highLabel.text = "21°"
+        highLabel.textAlignment = .right
         highLabel.font = .systemFont(ofSize: 22, weight: .medium)
-    }
-    
-    func configure(with time: String) {
-        timeLabel.text = time
     }
     
     required init?(coder: NSCoder) {
@@ -66,7 +63,7 @@ final class DayCell: UICollectionViewCell {
     func configure(with weather: DailyWeatherViewModel) {
         lowLabel.text = weather.lowTemperature
         highLabel.text = weather.highTemperature
-        imageView.image = UIImage(systemName: weather.iconName)
+        imageView.image = UIImage(systemName: "\(weather.iconName).fill", withConfiguration: UIImage.SymbolConfiguration.preferringMulticolor())
         timeLabel.text = weather.day
     }
 }

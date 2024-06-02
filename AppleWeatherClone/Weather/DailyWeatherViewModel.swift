@@ -28,28 +28,11 @@ struct DailyWeatherViewModel {
     }
     
     public var day: String {
-        let day = Calendar.current.component(.weekday, from: model.date)
-        return string(from: day)
-    }
-    
-    private func string(from day: Int) -> String {
-        switch (day) {
-        case 1:
-            return "Mon"
-        case 2:
-            return "Tue"
-        case 3:
-            return "Wed"
-        case 4:
-            return "Thu"
-        case 5:
-            return "Fri"
-        case 6:
-            return "Sat"
-        case 7:
-            return "Sun"
-        default:
-            return "Unavailable"
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE"
+        let calendar = Calendar.current
+        let inputDateComponents = calendar.dateComponents([.day], from: model.date)
+        let currentDateComponents = calendar.dateComponents([.day], from: Date())
+        return inputDateComponents == currentDateComponents ? "Today" : dateFormatter.string(from: model.date)
     }
 }

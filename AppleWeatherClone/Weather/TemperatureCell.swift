@@ -24,6 +24,9 @@ final class TemperatureCell: UICollectionViewCell {
     
     func configure(with weather: CurrentWeatherViewModel) {
         temperatureLabel.text = weather.temperature
+        cityLabel.text = weather.city
+        cloudLabel.text = weather.condition
+        bottomLabel.text = weather.dailyHighLow
         
     }
     

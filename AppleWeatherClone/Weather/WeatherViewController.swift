@@ -30,8 +30,12 @@ final class WeatherViewController: UIViewController {
     
     private func updateUI(with weather: Weather) {
         viewModel = [
-            .current(.init(model: weather.currentWeather)),
-            .hourly(weather.hourlyForecast.forecast.compactMap { .init(model: $0)}),
+            .current(.init(model: weather)),
+            .hourly(weather.hourlyForecast.forecast.filter({
+                let calendar = Calendar.current
+                let comparisonREsult = calendar.compare($0.date, to: Date(), toGranularity: .hour)
+                return comparisonREsult == .orderedSame || comparisonREsult == .orderedDescending
+            }).compactMap { .init(model: $0)}),
             .daily(weather.dailyForecast.forecast.compactMap { .init(model: $0)})
         ]
         collectionView.reloadData()
@@ -89,13 +93,13 @@ extension WeatherViewController: UICollectionViewDataSource {
     
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
-            switch sectionIndex {
-            case 1: return self.createDaySection()
+            switch self.viewModel[sectionIndex] {
+            case .hourly: return self.createDaySection()
             default: return self.createTemperatureSection()
             }
         }
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 50
+        config.interSectionSpacing = 20
         layout.configuration = config
         return layout
     }
@@ -119,7 +123,7 @@ extension WeatherViewController: UICollectionViewDataSource {
         return layoutSection
     }
 }
-//
-//#Preview {
-//    WeatherViewController()
-//}
+
+#Preview {
+    WeatherViewController()
+}

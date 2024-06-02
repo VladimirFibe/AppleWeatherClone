@@ -24,4 +24,6 @@ final class WeatherStore: Store<WeatherEvent, WeatherAction> {
         let weather = try await WeatherService.shared.weather(for: location)
         sendEvent(.updateUI(weather))
     }
+    
+    
 }
